@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>GastroGato</title>
 
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<div class="bg-blur blur1"></div>
+<div class="bg-blur blur2"></div>
+
 <header>
 
-  <div class="logo-area">
-    <img src="https://i.imgur.com/Bh8K8qH.png">
+  <div class="logo">
+
+    <div class="cat-circle">
+      <img src="https://i.imgur.com/lKjiT77.png">
+    </div>
 
     <div>
       <h1>GASTRO<span>GATO</span></h1>
-      <p>receitas para todos os momentos</p>
+      <p>receitas aconchegantes para todos os momentos</p>
     </div>
+
   </div>
 
   <nav>
@@ -31,9 +41,20 @@
     <a href="#contato">Contato</a>
   </nav>
 
-  <div class="search-box">
-    <input type="text" placeholder="Buscar receitas...">
-    <button>♡</button>
+  <div class="header-actions">
+
+    <div class="search-box">
+
+      <input type="text" id="searchInput" placeholder="Buscar receitas...">
+
+      <button>⌕</button>
+
+    </div>
+
+    <button class="fav-btn" onclick="toggleFavorites()">
+      ♡
+    </button>
+
   </div>
 
 </header>
@@ -42,40 +63,118 @@
 
   <div class="hero-text">
 
+    <span class="mini-tag">
+      ✨ receitas mais amadas da semana
+    </span>
+
     <h2>Receitas deliciosas</h2>
 
     <h3>para o seu dia!</h3>
 
     <p>
-      Encontre receitas incríveis, práticas e já aprovadas para deixar suas refeições ainda mais especiais.
+      Descubra receitas lindas, aconchegantes e realmente confiáveis para transformar qualquer refeição em um momento especial.
     </p>
 
-    <button onclick="scrollReceitas()">
-      VER RECEITAS 🍴
-    </button>
+    <div class="hero-buttons">
+
+      <button class="main-btn" onclick="scrollReceitas()">
+        VER RECEITAS 🍴
+      </button>
+
+      <button class="secondary-btn" onclick="openModal()">
+        Sobre o site
+      </button>
+
+    </div>
+
+    <div class="hero-info">
+
+      <div>
+        <strong>+250</strong>
+        <span>Receitas</span>
+      </div>
+
+      <div>
+        <strong>4.9★</strong>
+        <span>Avaliação</span>
+      </div>
+
+      <div>
+        <strong>100%</strong>
+        <span>Testadas</span>
+      </div>
+
+    </div>
 
   </div>
 
   <div class="hero-image">
+
+    <div class="floating-card one">
+      🍰 sobremesas
+    </div>
+
+    <div class="floating-card two">
+      ☕ café da tarde
+    </div>
+
     <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=1200&auto=format&fit=crop">
+
   </div>
 
 </section>
 
 <section class="categorias" id="categorias">
 
-  <h2>Navegue por categorias</h2>
+  <div class="section-title">
+
+    <span>CATEGORIAS</span>
+
+    <h2>Navegue por categorias</h2>
+
+  </div>
 
   <div class="categoria-grid">
 
-    <div class="categoria-card">🍝<span>Pratos Principais</span></div>
-    <div class="categoria-card">🥗<span>Saladas</span></div>
-    <div class="categoria-card">🍰<span>Doces</span></div>
-    <div class="categoria-card">🥤<span>Bebidas</span></div>
-    <div class="categoria-card">🍞<span>Pães</span></div>
-    <div class="categoria-card">🍔<span>Petiscos</span></div>
-    <div class="categoria-card">🧁<span>Bolos</span></div>
-    <div class="categoria-card">🍳<span>Receitas Rápidas</span></div>
+    <div class="categoria-card">
+      🍝
+      <span>Massas</span>
+    </div>
+
+    <div class="categoria-card">
+      🍰
+      <span>Doces</span>
+    </div>
+
+    <div class="categoria-card">
+      🥗
+      <span>Saladas</span>
+    </div>
+
+    <div class="categoria-card">
+      🍔
+      <span>Lanches</span>
+    </div>
+
+    <div class="categoria-card">
+      ☕
+      <span>Cafés</span>
+    </div>
+
+    <div class="categoria-card">
+      🍞
+      <span>Pães</span>
+    </div>
+
+    <div class="categoria-card">
+      🍳
+      <span>Receitas Rápidas</span>
+    </div>
+
+    <div class="categoria-card">
+      🥤
+      <span>Bebidas</span>
+    </div>
 
   </div>
 
@@ -83,25 +182,55 @@
 
 <section class="receitas" id="receitas">
 
-  <h2>Receitas em destaque</h2>
+  <div class="section-title left">
+
+    <span>RECEITAS</span>
+
+    <h2>Receitas em destaque</h2>
+
+  </div>
 
   <div class="receitas-grid">
 
     <div class="receita-card">
 
-      <img src="https://images.unsplash.com/photo-1619895092538-128341789043?q=80&w=1200&auto=format&fit=crop">
+      <div class="img-area">
+
+        <img src="https://images.unsplash.com/photo-1619895092538-128341789043?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="recipe-badge">
+          Popular
+        </div>
+
+      </div>
 
       <div class="receita-info">
+
+        <div class="recipe-top">
+
+          <span>🍝 Italiano</span>
+
+          <span>⭐ 4.9</span>
+
+        </div>
 
         <h3>Lasanha à Bolonhesa</h3>
 
         <p>
-          Receita clássica italiana com molho caseiro.
+          Receita clássica italiana com molho caseiro cremoso e queijo gratinado.
         </p>
 
-        <a href="https://www.tudogostoso.com.br/receita/3254-lasanha-a-bolonhesa.html" target="_blank">
-          Abrir receita
-        </a>
+        <div class="recipe-bottom">
+
+          <a href="https://www.tudogostoso.com.br/receita/3254-lasanha-a-bolonhesa.html" target="_blank">
+            Abrir receita
+          </a>
+
+          <button onclick="favorite(this)">
+            ♡
+          </button>
+
+        </div>
 
       </div>
 
@@ -109,39 +238,43 @@
 
     <div class="receita-card">
 
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
+      <div class="img-area">
+
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="recipe-badge">
+          Doce
+        </div>
+
+      </div>
 
       <div class="receita-info">
+
+        <div class="recipe-top">
+
+          <span>🍰 Sobremesa</span>
+
+          <span>⭐ 5.0</span>
+
+        </div>
 
         <h3>Bolo de Cenoura</h3>
 
         <p>
-          Fofinho com cobertura cremosa de chocolate.
+          Super fofinho com cobertura cremosa de chocolate.
         </p>
 
-        <a href="https://www.panelinha.com.br/receita/bolo-de-cenoura-com-cobertura-de-chocolate" target="_blank">
-          Abrir receita
-        </a>
+        <div class="recipe-bottom">
 
-      </div>
+          <a href="https://www.panelinha.com.br/receita/bolo-de-cenoura-com-cobertura-de-chocolate" target="_blank">
+            Abrir receita
+          </a>
 
-    </div>
+          <button onclick="favorite(this)">
+            ♡
+          </button>
 
-    <div class="receita-card">
-
-      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop">
-
-      <div class="receita-info">
-
-        <h3>Pão Caseiro</h3>
-
-        <p>
-          Receita deliciosa para café da tarde.
-        </p>
-
-        <a href="https://www.tudogostoso.com.br/receita/178357-pao-caseiro.html" target="_blank">
-          Abrir receita
-        </a>
+        </div>
 
       </div>
 
@@ -153,14 +286,22 @@
 
 <section class="sobre" id="sobre">
 
-  <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=1200&auto=format&fit=crop">
+  <div class="sobre-image">
 
-  <div>
+    <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=1200&auto=format&fit=crop">
 
-    <h2>Sobre o GastroGato</h2>
+  </div>
+
+  <div class="sobre-text">
+
+    <span>SOBRE O SITE</span>
+
+    <h2>
+      O GastroGato nasceu do amor por comida aconchegante ☕
+    </h2>
 
     <p>
-      O GastroGato nasceu para reunir receitas gostosas, práticas e aconchegantes em um só lugar.
+      Inspirado em cafeterias vintage, cozinhas cremosinhas e gatinhos julgando sua quantidade de queijo.
     </p>
 
   </div>
@@ -169,26 +310,58 @@
 
 <section class="contato" id="contato">
 
-  <h2>Contato</h2>
+  <div class="contact-card">
 
-  <form id="contactForm">
+    <div class="contact-text">
 
-    <input type="text" placeholder="Seu nome" required>
+      <span>CONTATO</span>
 
-    <input type="email" placeholder="Seu email" required>
+      <h2>Vamos conversar?</h2>
 
-    <textarea placeholder="Digite sua mensagem..." required></textarea>
+      <p>
+        Sugestões, receitas ou ideias novas? Manda mensagem ✨
+      </p>
 
-    <button type="submit">
-      Enviar mensagem
-    </button>
+    </div>
 
-  </form>
+    <form id="contactForm">
+
+      <input type="text" placeholder="Seu nome" required>
+
+      <input type="email" placeholder="Seu email" required>
+
+      <textarea placeholder="Digite sua mensagem..." required></textarea>
+
+      <button type="submit">
+        Enviar mensagem
+      </button>
+
+    </form>
+
+  </div>
 
 </section>
 
+<div class="modal" id="aboutModal">
+
+  <div class="modal-content">
+
+    <button class="close-modal" onclick="closeModal()">
+      ✕
+    </button>
+
+    <h2>🍰 GastroGato</h2>
+
+    <p>
+      Um site inspirado em cafeterias aconchegantes e receitas bonitas da internet.
+    </p>
+
+  </div>
+
+</div>
+
 <footer>
-  © 2026 GastroGato — feito com amor e receitas 🍰
+  © 2026 GastroGato — feito com amor, açúcar e gatos pretos 🖤
 </footer>
 
 <script src="script.js"></script>
