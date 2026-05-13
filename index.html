@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GastroGato</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+
+  <div class="logo-area">
+    <img src="https://i.imgur.com/Bh8K8qH.png">
+
+    <div>
+      <h1>GASTRO<span>GATO</span></h1>
+      <p>receitas para todos os momentos</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#home">Início</a>
+    <a href="#receitas">Receitas</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="search-box">
+    <input type="text" placeholder="Buscar receitas...">
+    <button>♡</button>
+  </div>
+
+</header>
+
+<section class="hero" id="home">
+
+  <div class="hero-text">
+
+    <h2>Receitas deliciosas</h2>
+
+    <h3>para o seu dia!</h3>
+
+    <p>
+      Encontre receitas incríveis, práticas e já aprovadas para deixar suas refeições ainda mais especiais.
+    </p>
+
+    <button onclick="scrollReceitas()">
+      VER RECEITAS 🍴
+    </button>
+
+  </div>
+
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=1200&auto=format&fit=crop">
+  </div>
+
+</section>
+
+<section class="categorias" id="categorias">
+
+  <h2>Navegue por categorias</h2>
+
+  <div class="categoria-grid">
+
+    <div class="categoria-card">🍝<span>Pratos Principais</span></div>
+    <div class="categoria-card">🥗<span>Saladas</span></div>
+    <div class="categoria-card">🍰<span>Doces</span></div>
+    <div class="categoria-card">🥤<span>Bebidas</span></div>
+    <div class="categoria-card">🍞<span>Pães</span></div>
+    <div class="categoria-card">🍔<span>Petiscos</span></div>
+    <div class="categoria-card">🧁<span>Bolos</span></div>
+    <div class="categoria-card">🍳<span>Receitas Rápidas</span></div>
+
+  </div>
+
+</section>
+
+<section class="receitas" id="receitas">
+
+  <h2>Receitas em destaque</h2>
+
+  <div class="receitas-grid">
+
+    <div class="receita-card">
+
+      <img src="https://images.unsplash.com/photo-1619895092538-128341789043?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="receita-info">
+
+        <h3>Lasanha à Bolonhesa</h3>
+
+        <p>
+          Receita clássica italiana com molho caseiro.
+        </p>
+
+        <a href="https://www.tudogostoso.com.br/receita/3254-lasanha-a-bolonhesa.html" target="_blank">
+          Abrir receita
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="receita-card">
+
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="receita-info">
+
+        <h3>Bolo de Cenoura</h3>
+
+        <p>
+          Fofinho com cobertura cremosa de chocolate.
+        </p>
+
+        <a href="https://www.panelinha.com.br/receita/bolo-de-cenoura-com-cobertura-de-chocolate" target="_blank">
+          Abrir receita
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="receita-card">
+
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="receita-info">
+
+        <h3>Pão Caseiro</h3>
+
+        <p>
+          Receita deliciosa para café da tarde.
+        </p>
+
+        <a href="https://www.tudogostoso.com.br/receita/178357-pao-caseiro.html" target="_blank">
+          Abrir receita
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="sobre" id="sobre">
+
+  <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=1200&auto=format&fit=crop">
+
+  <div>
+
+    <h2>Sobre o GastroGato</h2>
+
+    <p>
+      O GastroGato nasceu para reunir receitas gostosas, práticas e aconchegantes em um só lugar.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="contato" id="contato">
+
+  <h2>Contato</h2>
+
+  <form id="contactForm">
+
+    <input type="text" placeholder="Seu nome" required>
+
+    <input type="email" placeholder="Seu email" required>
+
+    <textarea placeholder="Digite sua mensagem..." required></textarea>
+
+    <button type="submit">
+      Enviar mensagem
+    </button>
+
+  </form>
+
+</section>
+
+<footer>
+  © 2026 GastroGato — feito com amor e receitas 🍰
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
