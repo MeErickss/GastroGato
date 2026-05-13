@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .editorial-shadow {
+    box-shadow: 8px 8px 0px #2D241E;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #FDFCF0;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #2D241E;
+    border-radius: 10px;
+  }
+}
