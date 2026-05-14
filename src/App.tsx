@@ -58,6 +58,7 @@ export default function App() {
     <div className="min-h-screen bg-brand-cream selection:bg-brand-orange selection:text-brand-ink">
       <Header
         onMenuClick={scrollToRecipes}
+        onShopClick={() => setShowShop(true)}
         onAboutClick={() => setShowAbout(true)}
         onBlogClick={() => setShowBlog(true)}
         onLoginClick={() => setShowLogin(true)}
@@ -341,13 +342,18 @@ export default function App() {
           <h2 className="text-5xl font-black uppercase tracking-tighter mb-12">Gato <span className="text-brand-orange italic font-normal lowercase">Shop</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'Colher Medidora Gato', price: 'R$ 89', img: 'https://images.unsplash.com/photo-1591261730799-ee4e6c2d16d7?auto=format&fit=crop&q=80&w=400' },
-              { name: 'Espátula de Silicat', price: 'R$ 65', img: 'https://images.unsplash.com/photo-1591544415303-3ca6b7725941?auto=format&fit=crop&q=80&w=400' },
-              { name: 'Avental Bigodes', price: 'R$ 145', img: 'https://images.unsplash.com/photo-1583947411586-302a632e8d8d?auto=format&fit=crop&q=80&w=400' },
+              { name: 'Colher Medidora Gato', price: 'R$ 89', img: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400' },
+              { name: 'Espátula de Silicat', price: 'R$ 65', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400' },
+              { name: 'Avental Bigodes', price: 'R$ 145', img: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=400' },
             ].map((p, i) => (
               <div key={i} className="group cursor-pointer">
                 <div className="aspect-[3/4] border-2 border-brand-ink rounded-[2rem] overflow-hidden mb-4 group-hover:editorial-shadow transition-all relative">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-brand-ink/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
                     <button
                       onClick={(e) => { e.stopPropagation(); addToCart(); }}
