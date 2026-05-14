@@ -110,7 +110,7 @@ export const RECIPES: Recipe[] = [
     id: '5',
     title: 'Tortinhas de Queijo e Bacon',
     description: 'Tortinhas de massa quebradiça recheadas com creme de ovos, queijo gruyère e bacon crocante, assadas até dourar.',
-    image: 'https://images.unsplash.com/photo-1644704138955-db7ead0c70d8?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1608855725042-e95ffd4ca487?auto=format&fit=crop&q=80&w=800',
     category: 'Snacks',
     prepTime: '50 min',
     difficulty: 'Medium',
