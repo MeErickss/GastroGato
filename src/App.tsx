@@ -7,8 +7,6 @@ import { RECIPES } from './data/recipes';
 import { Recipe } from './types';
 import { Cat, ArrowRight, Instagram, Twitter, Youtube, Clock, ChefHat } from 'lucide-react';
 
-//teste
-
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('Tudo');
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);

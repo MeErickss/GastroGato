@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 
 interface ModalProps {
   isOpen: boolean;
@@ -9,6 +9,11 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -24,15 +29,17 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-5xl max-h-[90vh] bg-brand-cream border-4 border-brand-ink rounded-[3rem] shadow-[16px_16px_0px_#2D241E] overflow-y-auto custom-scrollbar p-8 md:p-16"
+            className="relative w-full max-w-5xl max-h-[90vh] bg-brand-cream border-4 border-brand-ink rounded-[3rem] shadow-[16px_16px_0px_#2D241E] flex flex-col overflow-hidden"
           >
             <button
               onClick={onClose}
-              className="absolute top-8 right-8 p-3 border-2 border-brand-ink rounded-full hover:bg-brand-orange transition-all"
+              className="absolute top-8 right-8 z-10 p-3 border-2 border-brand-ink rounded-full hover:bg-brand-orange transition-all"
             >
               <X size={20} />
             </button>
-            {children}
+            <div className="overflow-y-auto custom-scrollbar p-8 md:p-16 flex-1 min-h-0">
+              {children}
+            </div>
           </motion.div>
         </div>
       )}
